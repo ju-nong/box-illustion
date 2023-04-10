@@ -4,3 +4,31 @@
     border: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #000;
+}
+
+@keyframes solid-animation-left {
+    0% {
+        transform: rotate(-45deg) translate(0, -20px);
+    }
+    50% {
+        transform: rotate(-45deg) translate(0, 20px);
+    }
+    100% {
+        transform: rotate(-45deg) translate(0, -20px);
+    }
+}
+
+@keyframes solid-animation-right {
+    0% {
+        transform: rotate(45deg) translate(0, -20px);
+    }
+    50% {
+        transform: rotate(45deg) translate(0, 20px);
+    }
+    100% {
+        transform: rotate(45deg) translate(0, -20px);
+    }
+}
