@@ -55,7 +55,8 @@ const Box = styled.div`
     width: 60px;
     height: 60px;
 
-    background-color: yellow;
+    overflow: hidden;
+
     transform: rotate(45deg);
     transition: all 0.5s;
     opacity: 0;
@@ -84,11 +85,18 @@ const Box = styled.div`
     }
 
     &:hover {
-        background-color: transparent;
+        opacity: 0 !important;
     }
 
     &.show {
         opacity: 1;
+    }
+
+    img {
+        width: 150%;
+        height: 150%;
+        object-fit: cover;
+        transform: rotate(-45deg) translateY(-25%);
     }
 `;
 
@@ -106,7 +114,9 @@ function App() {
                 <Solid />
                 <Solid />
                 {box.map((index) => (
-                    <Box className={`${showBox ? `show` : ``}`} key={index} />
+                    <Box className={`${showBox ? `show` : ``}`} key={index}>
+                        <img src="/raccoon-man.png" alt="너굴맨" />
+                    </Box>
                 ))}
             </SolidContainer>
             <button onClick={toggleShowBox}>Click me!</button>
